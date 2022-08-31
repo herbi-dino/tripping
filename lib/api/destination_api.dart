@@ -3,7 +3,7 @@ import 'dart:typed_data';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:tripping/api/schedule_api.dart';
 import 'package:tripping/firebase/storage.dart';
-import 'package:tripping/model/destination_model.dart';
+import 'package:tripping/models/destination_model.dart';
 import 'package:uuid/uuid.dart';
 
 class DestinationAPI {

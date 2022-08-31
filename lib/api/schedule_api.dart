@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:tripping/api/destination_api.dart';
 import 'package:tripping/api/trip_api.dart';
-import 'package:tripping/model/schedule_model.dart';
+import 'package:tripping/models/schedule_model.dart';
 import 'package:uuid/uuid.dart';
 
 class ScheduleAPI {

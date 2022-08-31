@@ -5,7 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:tripping/api/schedule_api.dart';
 import 'package:tripping/api/user.api.dart';
 import 'package:tripping/firebase/storage.dart';
-import 'package:tripping/model/trip_model.dart';
+import 'package:tripping/models/trip_model.dart';
 import 'package:uuid/uuid.dart';
 
 class TripAPI {

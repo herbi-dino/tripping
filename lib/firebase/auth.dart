@@ -3,7 +3,7 @@ import 'dart:typed_data';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:tripping/api/user.api.dart';
-import 'package:tripping/model/user_model.dart';
+import 'package:tripping/models/user_model.dart';
 
 class Auth {
   final FirebaseAuth _auth = FirebaseAuth.instance;
