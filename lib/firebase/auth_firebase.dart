@@ -7,7 +7,7 @@ import 'package:tripping/models/user_model.dart';
 class AuthFirebase {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  Future<UserModel> signupUser({
+  Future<UserModel> signUpUser({
     required String email,
     required String password,
     required String name,

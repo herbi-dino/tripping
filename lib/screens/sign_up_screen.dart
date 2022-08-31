@@ -3,37 +3,32 @@
 import 'package:flutter/material.dart';
 import 'package:tripping/firebase/auth_firebase.dart';
 import 'package:tripping/screens/home_screen.dart';
-import 'package:tripping/screens/sign_up_screen.dart';
+import 'package:tripping/screens/login_screen.dart';
 import 'package:tripping/utils/color.dart';
 import 'package:tripping/utils/path.dart';
 import 'package:tripping/utils/utils.dart';
 import 'package:tripping/widgets/button.dart';
 import 'package:tripping/widgets/input_field.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({Key? key}) : super(key: key);
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
+  final TextEditingController _nameCtrl = TextEditingController();
   final TextEditingController _emailCtrl = TextEditingController();
   final TextEditingController _passwordCtrl = TextEditingController();
 
-  @override
-  void dispose() {
-    super.dispose();
-
-    _emailCtrl.dispose();
-    _passwordCtrl.dispose();
-  }
-
-  void login() async {
+  void signUp() async {
     try {
-      await AuthFirebase().loginUser(
+      await AuthFirebase().signUpUser(
         email: _emailCtrl.text,
         password: _passwordCtrl.text,
+        name: _nameCtrl.text,
+        avatarFile: null,
       );
 
       Navigator.pushReplacement(
@@ -47,11 +42,11 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
-  void switchToSignUp() {
+  void switchToLogin() {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (_) => const SignUpScreen(),
+        builder: (_) => const LoginScreen(),
       ),
     );
   }
@@ -71,6 +66,12 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
               Image.asset(logo01Path),
               InputField(
+                controller: _nameCtrl,
+                isPassword: false,
+                hintText: 'Name',
+                inputType: TextInputType.text,
+              ),
+              InputField(
                 controller: _emailCtrl,
                 isPassword: false,
                 hintText: 'Email',
@@ -83,13 +84,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 inputType: TextInputType.text,
               ),
               Button(
-                onClick: login,
-                text: 'Login',
+                onClick: signUp,
+                text: 'Sign up',
               ),
               InkWell(
-                onTap: switchToSignUp,
+                onTap: switchToLogin,
                 child: const Text(
-                  'Sign up for an account?',
+                  'Already have an account?',
                   style: TextStyle(
                     fontSize: 14,
                     color: blackColor,
