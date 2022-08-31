@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "99690521476",
+    "project_id": "tripping-f0018",
+    "storage_bucket": "tripping-f0018.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:99690521476:android:373d4e461c464ef03bb3d1",
+        "android_client_info": {
+          "package_name": "com.herbi_dino.tripping"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "99690521476-21umfvhtcid91mvhio7h5o3hngspm6pq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMarrgX4dGSEqUcaQmn1L5wcwe2aWYlUM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "99690521476-21umfvhtcid91mvhio7h5o3hngspm6pq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
