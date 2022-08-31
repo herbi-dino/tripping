@@ -18,7 +18,7 @@ class PlashScreen extends StatelessWidget {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-        builder: (context) => StreamBuilder(
+        builder: (_) => StreamBuilder(
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (_, snapshot) {
             if (snapshot.hasData) {

@@ -1,13 +1,11 @@
 import 'dart:typed_data';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:tripping/api/user.api.dart';
 import 'package:tripping/models/user_model.dart';
 
-class Auth {
+class AuthFirebase {
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   Future<UserModel> signupUser({
     required String email,

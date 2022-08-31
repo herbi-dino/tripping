@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:tripping/utils/color.dart';
 
-class TextInputField extends StatelessWidget {
+class InputField extends StatelessWidget {
   final TextEditingController controller;
   final bool isPassword;
   final String hintText;
   final TextInputType inputType;
 
-  const TextInputField({
+  const InputField({
     Key? key,
     required this.controller,
     required this.isPassword,
@@ -28,14 +29,18 @@ class TextInputField extends StatelessWidget {
       ),
       child: TextField(
         controller: controller,
+        style: const TextStyle(
+          fontSize: 16,
+          color: blackColor,
+        ),
         decoration: InputDecoration(
           hintText: hintText,
           enabledBorder: border,
           focusedBorder: border,
           filled: true,
           contentPadding: const EdgeInsets.symmetric(
-            vertical: 12,
             horizontal: 16,
+            vertical: 12,
           ),
         ),
         keyboardType: inputType,

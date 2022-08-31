@@ -3,7 +3,7 @@ import 'dart:typed_data';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:uuid/uuid.dart';
 
-class Storage {
+class StorageFirebase {
   final FirebaseStorage _storage = FirebaseStorage.instance;
 
   Future<String> uploadImage(

@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:tripping/api/schedule_api.dart';
 import 'package:tripping/api/user.api.dart';
-import 'package:tripping/firebase/storage.dart';
+import 'package:tripping/firebase/storage_firebase.dart';
 import 'package:tripping/models/trip_model.dart';
 import 'package:uuid/uuid.dart';
 
@@ -27,7 +27,7 @@ class TripAPI {
       var imgUrl = 'no image';
 
       if (imageFile != null) {
-        imgUrl = await Storage().uploadImage('tripPics', imageFile);
+        imgUrl = await StorageFirebase().uploadImage('tripPics', imageFile);
       }
 
       var trip = TripModel(
@@ -81,7 +81,7 @@ class TripAPI {
       var imgUrl = oldTrip.imageUrl;
 
       if (imageFile != null) {
-        imgUrl = await Storage().uploadImage('tripPics', imageFile);
+        imgUrl = await StorageFirebase().uploadImage('tripPics', imageFile);
       }
 
       var newTrip = TripModel(

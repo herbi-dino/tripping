@@ -2,7 +2,7 @@ import 'dart:typed_data';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:tripping/firebase/storage.dart';
+import 'package:tripping/firebase/storage_firebase.dart';
 import 'package:tripping/models/user_model.dart';
 
 class UserAPI {
@@ -20,7 +20,7 @@ class UserAPI {
       var avtUrl = 'no avatar';
 
       if (avatarFile != null) {
-        avtUrl = await Storage().uploadImage("profilePics", avatarFile);
+        avtUrl = await StorageFirebase().uploadImage("profilePics", avatarFile);
       }
 
       var usr = UserModel(

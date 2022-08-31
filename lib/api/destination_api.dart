@@ -2,7 +2,7 @@ import 'dart:typed_data';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:tripping/api/schedule_api.dart';
-import 'package:tripping/firebase/storage.dart';
+import 'package:tripping/firebase/storage_firebase.dart';
 import 'package:tripping/models/destination_model.dart';
 import 'package:uuid/uuid.dart';
 
@@ -19,7 +19,7 @@ class DestinationAPI {
     try {
       var imgUrl = 'no image';
       if (imageFile != null) {
-        imgUrl = await Storage().uploadImage('destPics', imageFile);
+        imgUrl = await StorageFirebase().uploadImage('destPics', imageFile);
       }
 
       var dest = DestinationModel(
