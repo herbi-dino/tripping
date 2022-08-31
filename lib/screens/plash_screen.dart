@@ -1,8 +1,10 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:tripping/screens/welcome_screen.dart';
+import 'package:tripping/screens/home_screen.dart';
+import 'package:tripping/screens/login_screen.dart';
 import 'package:tripping/utils/color.dart';
 import 'package:tripping/utils/path.dart';
 
@@ -16,7 +18,16 @@ class PlashScreen extends StatelessWidget {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-        builder: (context) => const WelcomeScreen(),
+        builder: (context) => StreamBuilder(
+          stream: FirebaseAuth.instance.authStateChanges(),
+          builder: (_, snapshot) {
+            if (snapshot.hasData) {
+              return const HomeScreen();
+            }
+
+            return const LoginScreen();
+          },
+        ),
       ),
     );
   }
